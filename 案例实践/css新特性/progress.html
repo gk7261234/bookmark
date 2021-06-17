@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>自定义属性--实现进度条</title>
+    <style>
+      .progress-bar {
+        --progress: 0.5;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 80vw;
+        height: 4rem;
+        border-radius: 5rem;
+        border: solid 2px #333;
+        background-color: #888;
+        overflow: hidden;
+      }
+
+      .progress-bar::before {
+        content: "";
+        display: block;
+        background-color: hsl(calc(0deg + var(--progress) * 100deg), 100%, 35%);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: calc(var(--progress) * 100%);
+        height: 100%;
+      }
+
+      .progress-bar::after {
+        content: attr(data-progress) "%";
+        z-index: 1;
+        color: white;
+        font-size: 1.25em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="progress-bar" data-progress="50"></div>
+  </body>
+  <script>
+    (function () {
+      [...document.querySelectorAll(".progress-bar")].forEach((e) =>
+        e.addEventListener("mousemove", ({ offsetX, target }) => {
+          // progress，0到1之间的值
+          const progress = offsetX / target.clientWidth;
+          // 设置CSS自定义属性
+          target.style.setProperty("--progress", progress);
+          // 设置Attribute
+          target.setAttribute(
+            "data-progress",
+            Math.abs(progress * 100).toFixed(0)
+          );
+        })
+      );
+    })();
+  </script>
+</html>

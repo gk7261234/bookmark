@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>自定义属性--实现悬浮变化</title>
+    <style>
+      .border {
+        /* background-color: peachpuff;
+        padding: 0.8em; */
+      }
+      .border > div {
+        /* background: burlywood;
+        border-radius: .8em;
+        padding: 1em; */
+        background: burlywood;
+        border-radius: 0.8em;
+        padding: 1em;
+        box-shadow: 0 0 0 0.6em peachpuff;
+        outline: 0.6em solid peachpuff;
+      }
+      .bg-image1 {
+        height: 80px;
+        width: 100%;
+        background: linear-gradient(to right, lightsalmon 50%, greenyellow 0);
+        background-size: 30px 100%;
+      }
+      .bg-image2 {
+        height: 80px;
+        width: 100%;
+        background: linear-gradient(
+          45deg,
+          lightsalmon 25%,
+          greenyellow 0,
+          greenyellow 50%,
+          lightsalmon 0,
+          lightsalmon 75%,
+          greenyellow 0
+        );
+        background-size: 30px 30px;
+      }
+      .bg-image3 {
+        height: 300px;
+        width: 100%;
+        background: darkolivegreen;
+        background-image: linear-gradient(white 2px, transparent 0),
+          linear-gradient(90deg, white 2px, transparent 0),
+          linear-gradient(hsla(0, 0%, 100%, 0.3) 1px, transparent 0),
+          linear-gradient(90deg, hsla(0, 0%, 100%, 0.3) 1px, transparent 0);
+        background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="border">
+      <div>测试文字</div>
+    </div>
+    <div class="bg-image1"></div>
+    <div class="bg-image2"></div>
+    <div class="bg-image3"></div>
+  </body>
+</html>

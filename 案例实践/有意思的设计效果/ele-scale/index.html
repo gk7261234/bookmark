@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    html, body{
+      font-size: 12px;
+    }
+    @media screen and (min-width: 320px) {
+      html, body {
+        font-size: 12px;
+      }
+    }
+    @media screen and (min-width: 520px) {
+      html, body {
+        font-size: 24px;
+      }
+    }
+    @media screen and (min-width: 720px) {
+      html, body {
+        font-size: 32px;
+      }
+    }
+    .font1 {
+      font-size: 1rem;
+    }
+    .displayIB{
+      display: inline-block;
+    }
+    .scaleFont {
+      transform: scale(0.58);
+    }
+  </style>
+</head>
+<body>
+<p class="font1">测试<span class="displayIB scaleFont">8888</span>测试</p>
+</body>
+</html>

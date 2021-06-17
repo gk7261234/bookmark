@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .img-up-down {
+      width: 160px;
+      margin:  100px auto;
+      position: relative;
+      animation: imageUpDown 1s infinite alternate;
+    }
+    @keyframes imageUpDown {
+      from {
+        margin-top: 100px;
+      }
+      to {
+        margin-top: 70px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <!--
+    实现效果：图片上下浮动的动态效果
+    技术总结：利用 animation 配合 @keyframes 控制 margin-top 的变化
+  -->
+  <div class="img-up-down">
+    <img src="https://assets.gitee.com/assets/homepage/202006/astronaut@2x-36be8d1a709eb1018f0f3aac98f30da0.png" alt="人物浮动">
+  </div>
+  
+</body>
+</html>

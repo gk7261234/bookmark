@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .far {
+      height: 2000px;
+    }
+    .bg-img {
+      width: 100%;
+      height: 800px;
+      background: url("https://s.w.org/images/home/collage-min.jpg") no-repeat center top;
+      background-attachment: fixed;
+      background-size: 100% 800px;
+    }
+  </style>
+</head>
+<body>
+  <!--
+    实现效果：滚动视图，背景图片固定显示可视区域
+    实现原理： background-attachment （scroll [默认] fixed local initial inherit）属性设置fixed
+  -->
+  <div class="far">
+    <div class="bg-img"></div>
+  </div>
+</body>
+</html> 

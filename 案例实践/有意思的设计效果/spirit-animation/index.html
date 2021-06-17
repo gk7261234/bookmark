@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>精灵图动画</title>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        border: 1px red solid;
+        background-image: url("./tlp.png");
+        /* 设置背景不重复方便调节 */
+        background-repeat: no-repeat;
+        /* 多动画使用,隔开   	
+            run2 2s 2s steps(5)
+            run2规定需要绑定到选择器的 keyframe 名称,
+            2s规定完成动画所花费的时间,
+            2s规定在动画开始之前的延迟,
+            steps(5)规定动画的步数。 */
+        animation: run 2s steps(5), run2 2s 2s steps(5), run3 2s 4s steps(5),
+          run4 2s 6s steps(5);
+        animation-iteration-count: infinite, infinite, infinite, infinite;
+      }
+      @keyframes run {
+        0% {
+          background-position: 0 0;
+        }
+
+        100% {
+          background-position: -500px 0;
+        }
+      }
+      @keyframes run2 {
+        from {
+          background-position: 0px -100px;
+        }
+
+        to {
+          background-position: -500px -100px;
+        }
+      }
+      @keyframes run3 {
+        from {
+          background-position: -0px -200px;
+        }
+
+        to {
+          background-position: -500px -200px;
+        }
+      }
+      @keyframes run4 {
+        from {
+          background-position: -0px -300px;
+        }
+
+        to {
+          background-position: -500px -300px;
+        }
+      }
+
+      .box {
+        animation-play-state: paused;
+      }
+
+      .box:hover {
+        animation-play-state: running;
+      }
+
+      #Icon_01 {
+        background-image: url("images/icon01.png");
+        width: 100px;
+        height: 100px;
+        -webkit-animation: Icon_01_Ani 1s steps(1) infinite;
+        -moz-animation: Icon_01_Ani 1s steps(1) infinite;
+        -ms-animation: Icon_01_Ani 1s steps(1) infinite;
+        -o-animation: Icon_01_Ani 1s steps(1) infinite;
+        animation: Icon_01_Ani 1s steps(1) infinite;
+      }
+
+      @-webkit-keyframes Icon_01_Ani {
+        0% {
+          -webkit-background-position: 0px 0px;
+        }
+        4.17% {
+          -webkit-background-position: -100px 0px;
+        }
+        8.33% {
+          -webkit-background-position: -200px 0px;
+        }
+        12.50% {
+          -webkit-background-position: -300px 0px;
+        }
+        16.67% {
+          -webkit-background-position: -400px 0px;
+        }
+        20.83% {
+          -webkit-background-position: 0px -100px;
+        }
+        25.00% {
+          -webkit-background-position: -100px -100px;
+        }
+        29.17% {
+          -webkit-background-position: -200px -100px;
+        }
+        33.33% {
+          -webkit-background-position: -300px -100px;
+        }
+        37.50% {
+          -webkit-background-position: -400px -100px;
+        }
+        41.67% {
+          -webkit-background-position: 0px -200px;
+        }
+        45.83% {
+          -webkit-background-position: -100px -200px;
+        }
+        50.00% {
+          -webkit-background-position: -200px -200px;
+        }
+        54.17% {
+          -webkit-background-position: -300px -200px;
+        }
+        58.33% {
+          -webkit-background-position: -400px -200px;
+        }
+        62.50% {
+          -webkit-background-position: 0px -300px;
+        }
+        66.67% {
+          -webkit-background-position: -100px -300px;
+        }
+        70.83% {
+          -webkit-background-position: -200px -300px;
+        }
+        75.00% {
+          -webkit-background-position: -300px -300px;
+        }
+        79.17% {
+          -webkit-background-position: -400px -300px;
+        }
+        83.33% {
+          -webkit-background-position: 0px -400px;
+        }
+        87.50% {
+          -webkit-background-position: -100px -400px;
+        }
+        91.67% {
+          -webkit-background-position: -200px -400px;
+        }
+        95.83% {
+          -webkit-background-position: -300px -400px;
+        }
+        100.00% {
+          -webkit-background-position: -400px -400px;
+        }
+      }
+      @-moz-keyframes Icon_01_Ani {
+        0% {
+          -moz-background-position: 0px 0px;
+        }
+        4.17% {
+          -moz-background-position: -100px 0px;
+        }
+        8.33% {
+          -moz-background-position: -200px 0px;
+        }
+        12.50% {
+          -moz-background-position: -300px 0px;
+        }
+        16.67% {
+          -moz-background-position: -400px 0px;
+        }
+        20.83% {
+          -moz-background-position: 0px -100px;
+        }
+        25.00% {
+          -moz-background-position: -100px -100px;
+        }
+        29.17% {
+          -moz-background-position: -200px -100px;
+        }
+        33.33% {
+          -moz-background-position: -300px -100px;
+        }
+        37.50% {
+          -moz-background-position: -400px -100px;
+        }
+        41.67% {
+          -moz-background-position: 0px -200px;
+        }
+        45.83% {
+          -moz-background-position: -100px -200px;
+        }
+        50.00% {
+          -moz-background-position: -200px -200px;
+        }
+        54.17% {
+          -moz-background-position: -300px -200px;
+        }
+        58.33% {
+          -moz-background-position: -400px -200px;
+        }
+        62.50% {
+          -moz-background-position: 0px -300px;
+        }
+        66.67% {
+          -moz-background-position: -100px -300px;
+        }
+        70.83% {
+          -moz-background-position: -200px -300px;
+        }
+        75.00% {
+          -moz-background-position: -300px -300px;
+        }
+        79.17% {
+          -moz-background-position: -400px -300px;
+        }
+        83.33% {
+          -moz-background-position: 0px -400px;
+        }
+        87.50% {
+          -moz-background-position: -100px -400px;
+        }
+        91.67% {
+          -moz-background-position: -200px -400px;
+        }
+        95.83% {
+          -moz-background-position: -300px -400px;
+        }
+        100.00% {
+          -moz-background-position: -400px -400px;
+        }
+      }
+      @-ms-keyframes Icon_01_Ani {
+        0% {
+          -ms-background-position: 0px 0px;
+        }
+        4.17% {
+          -ms-background-position: -100px 0px;
+        }
+        8.33% {
+          -ms-background-position: -200px 0px;
+        }
+        12.50% {
+          -ms-background-position: -300px 0px;
+        }
+        16.67% {
+          -ms-background-position: -400px 0px;
+        }
+        20.83% {
+          -ms-background-position: 0px -100px;
+        }
+        25.00% {
+          -ms-background-position: -100px -100px;
+        }
+        29.17% {
+          -ms-background-position: -200px -100px;
+        }
+        33.33% {
+          -ms-background-position: -300px -100px;
+        }
+        37.50% {
+          -ms-background-position: -400px -100px;
+        }
+        41.67% {
+          -ms-background-position: 0px -200px;
+        }
+        45.83% {
+          -ms-background-position: -100px -200px;
+        }
+        50.00% {
+          -ms-background-position: -200px -200px;
+        }
+        54.17% {
+          -ms-background-position: -300px -200px;
+        }
+        58.33% {
+          -ms-background-position: -400px -200px;
+        }
+        62.50% {
+          -ms-background-position: 0px -300px;
+        }
+        66.67% {
+          -ms-background-position: -100px -300px;
+        }
+        70.83% {
+          -ms-background-position: -200px -300px;
+        }
+        75.00% {
+          -ms-background-position: -300px -300px;
+        }
+        79.17% {
+          -ms-background-position: -400px -300px;
+        }
+        83.33% {
+          -ms-background-position: 0px -400px;
+        }
+        87.50% {
+          -ms-background-position: -100px -400px;
+        }
+        91.67% {
+          -ms-background-position: -200px -400px;
+        }
+        95.83% {
+          -ms-background-position: -300px -400px;
+        }
+        100.00% {
+          -ms-background-position: -400px -400px;
+        }
+      }
+      @-o-keyframes Icon_01_Ani {
+        0% {
+          -o-background-position: 0px 0px;
+        }
+        4.17% {
+          -o-background-position: -100px 0px;
+        }
+        8.33% {
+          -o-background-position: -200px 0px;
+        }
+        12.50% {
+          -o-background-position: -300px 0px;
+        }
+        16.67% {
+          -o-background-position: -400px 0px;
+        }
+        20.83% {
+          -o-background-position: 0px -100px;
+        }
+        25.00% {
+          -o-background-position: -100px -100px;
+        }
+        29.17% {
+          -o-background-position: -200px -100px;
+        }
+        33.33% {
+          -o-background-position: -300px -100px;
+        }
+        37.50% {
+          -o-background-position: -400px -100px;
+        }
+        41.67% {
+          -o-background-position: 0px -200px;
+        }
+        45.83% {
+          -o-background-position: -100px -200px;
+        }
+        50.00% {
+          -o-background-position: -200px -200px;
+        }
+        54.17% {
+          -o-background-position: -300px -200px;
+        }
+        58.33% {
+          -o-background-position: -400px -200px;
+        }
+        62.50% {
+          -o-background-position: 0px -300px;
+        }
+        66.67% {
+          -o-background-position: -100px -300px;
+        }
+        70.83% {
+          -o-background-position: -200px -300px;
+        }
+        75.00% {
+          -o-background-position: -300px -300px;
+        }
+        79.17% {
+          -o-background-position: -400px -300px;
+        }
+        83.33% {
+          -o-background-position: 0px -400px;
+        }
+        87.50% {
+          -o-background-position: -100px -400px;
+        }
+        91.67% {
+          -o-background-position: -200px -400px;
+        }
+        95.83% {
+          -o-background-position: -300px -400px;
+        }
+        100.00% {
+          -o-background-position: -400px -400px;
+        }
+      }
+      @keyframes Icon_01_Ani {
+        0% {
+          background-position: 0px 0px;
+        }
+        4.17% {
+          background-position: -100px 0px;
+        }
+        8.33% {
+          background-position: -200px 0px;
+        }
+        12.50% {
+          background-position: -300px 0px;
+        }
+        16.67% {
+          background-position: -400px 0px;
+        }
+        20.83% {
+          background-position: 0px -100px;
+        }
+        25.00% {
+          background-position: -100px -100px;
+        }
+        29.17% {
+          background-position: -200px -100px;
+        }
+        33.33% {
+          background-position: -300px -100px;
+        }
+        37.50% {
+          background-position: -400px -100px;
+        }
+        41.67% {
+          background-position: 0px -200px;
+        }
+        45.83% {
+          background-position: -100px -200px;
+        }
+        50.00% {
+          background-position: -200px -200px;
+        }
+        54.17% {
+          background-position: -300px -200px;
+        }
+        58.33% {
+          background-position: -400px -200px;
+        }
+        62.50% {
+          background-position: 0px -300px;
+        }
+        66.67% {
+          background-position: -100px -300px;
+        }
+        70.83% {
+          background-position: -200px -300px;
+        }
+        75.00% {
+          background-position: -300px -300px;
+        }
+        79.17% {
+          background-position: -400px -300px;
+        }
+        83.33% {
+          background-position: 0px -400px;
+        }
+        87.50% {
+          background-position: -100px -400px;
+        }
+        91.67% {
+          background-position: -200px -400px;
+        }
+        95.83% {
+          background-position: -300px -400px;
+        }
+        100.00% {
+          background-position: -400px -400px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+    <h2>hover执行</h2>
+    <div class="box"></div>
+  </body>
+</html>

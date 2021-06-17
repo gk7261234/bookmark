@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>雪碧图transition实现动画</title>
+  <style>
+    .tech_inco1 {
+      margin: 0 auto;
+      width: 64px;
+      height: 64px;
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      background-size: 100%;
+      background-position-y: 0;
+      background-image: url("./ali.png");
+    }
+  </style>
+</head>
+<body>
+  <div class="tech_inco1" id="animation"></div>
+  <script>
+    (function(){
+      const animationNode = document.querySelector("#animation");
+      let position_y = 0, startFrames = 1, step = 64;
+      const an_left_to_right = function() {
+        if(startFrames < 20){
+          position_y = startFrames * step * -1
+          animationNode.style.backgroundPositionY = position_y + "px";
+          startFrames++
+          requestAnimationFrame(an_left_to_right);
+        }
+      }
+      const an_right_to_left = function() {
+        if(startFrames > 1){
+          position_y = startFrames * step * -1
+          animationNode.style.backgroundPositionY = position_y + "px";
+          startFrames--
+          requestAnimationFrame(an_right_to_left);
+        }
+      }
+      animationNode.addEventListener("mouseover", an_left_to_right, false);
+      animationNode.addEventListener("mouseout", an_right_to_left, false);
+
+    })()
+  </script>
+</body>
+</html>

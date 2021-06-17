@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>自定义属性--实现悬浮变化</title>
+    <style>
+      button {
+        --is-raised: ; /* off by default */
+        border: 1px solid var(--is-raised, rgb(0 0 0 / 0.1));
+        background: var(
+            --is-raised,
+            linear-gradient(hsl(0 0% 100% / 0.3), transparent)
+          )
+          hsl(200 100% 50%);
+        box-shadow: var(
+          --is-raised,
+          0 1px hsl(0 0% 100% / 0.8) inset,
+          0 0.1em 0.1em -0.1em rgb(0 0 0 / 0.2)
+        );
+        text-shadow: var(--is-raised, 0 -1px 1px rgb(0 0 0 / 0.3));
+      }
+      button:hover {
+        --is-raised: initial; /* turn on */
+      }
+    </style>
+  </head>
+  <body>
+    <button>hover me!</button>
+  </body>
+</html>

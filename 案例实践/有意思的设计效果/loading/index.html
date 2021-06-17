@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="//at.alicdn.com/t/font_2192999_5k53ookrg.css" rel="stylesheet">
+  <title>Document</title>
+  <style>
+    #xuanzhun{
+      -webkit-animation: rotate 3s linear infinite;
+      -moz-animation: rotate 3s linear infinite;
+      -o-animation: rotate 3s linear infinite;
+      animation: rotate 3s linear infinite;
+      height: 30px;
+      width: 30px;
+    }
+    @-webkit-keyframes rotate{
+      from{-webkit-transform: rotate(0deg)}
+      to{-webkit-transform: rotate(360deg)}
+    }
+    @-moz-keyframes rotate{
+      from{-moz-transform: rotate(0deg)}
+      to{-moz-transform: rotate(359deg)}
+    }
+    @-o-keyframes rotate{
+      from{-o-transform: rotate(0deg)}
+      to{-o-transform: rotate(359deg)}
+    }
+    @keyframes rotate{
+      from{transform: rotate(0deg)}
+      to{transform: rotate(359deg)}
+    }
+  </style>
+</head>
+<body>
+  <!-- ali icon 引入要加 iconfont xxx; 实现旋转不能 ali icon -->>
+  <div style="width: 50px; height: 50px;">
+    <img id="xuanzhun" src="./snow.png" width="30" height="30" />
+  </div>
+</body>
+</html>
